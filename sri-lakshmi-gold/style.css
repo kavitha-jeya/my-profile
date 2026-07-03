@@ -1,0 +1,158 @@
+/* =========================================
+   SRI LAKSHMI GOLD PALACE - LIGHT LUXURY CSS
+   ========================================= */
+
+:root {
+    --primary-gold: #D4AF37;
+    --light-gold: #F5E6A7;
+    --matte-black: #0F0F0F;
+    --dark-gray: #1A1A1A;
+    --white: #FFFFFF;
+    --bg-light: #F8F8F8;
+    --text-dark: #333333;
+    --text-muted: #666666;
+    
+    --font-heading: 'Playfair Display', serif;
+    --font-text: 'Montserrat', sans-serif;
+    
+    --transition: all 0.4s ease;
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: var(--font-text);
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+a { text-decoration: none; color: inherit; transition: var(--transition); }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+.container { max-width: 1300px; margin: 0 auto; padding: 0 5%; }
+.section { padding: 100px 0; }
+.grid { display: grid; gap: 30px; }
+
+/* Typography */
+h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--matte-black); }
+.section-header { text-align: center; margin-bottom: 50px; }
+.section-header h2 { font-size: 2.5rem; margin-bottom: 15px; }
+.section-header p { color: var(--text-muted); font-size: 1.1rem; }
+.divider { height: 2px; width: 60px; background: var(--primary-gold); margin: 0 auto 20px; }
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+    transition: var(--transition);
+    cursor: pointer;
+    border-radius: 2px;
+}
+.btn-primary { background: var(--matte-black); color: var(--primary-gold); border: 1px solid var(--matte-black); }
+.btn-primary:hover { background: var(--primary-gold); color: var(--matte-black); border-color: var(--primary-gold); }
+.btn-outline { background: transparent; color: var(--matte-black); border: 1px solid var(--matte-black); }
+.btn-outline:hover { background: var(--matte-black); color: var(--primary-gold); }
+.btn-outline-small { padding: 8px 20px; font-size: 0.85rem; border: 1px solid var(--primary-gold); color: var(--primary-gold); }
+.btn-outline-small:hover { background: var(--primary-gold); color: var(--white); }
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0; left: 0; width: 100%; z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+.nav-container {
+    max-width: 1400px; margin: 0 auto; padding: 15px 5%;
+    display: flex; justify-content: space-between; align-items: center;
+}
+.logo { display: flex; align-items: center; gap: 10px; color: var(--matte-black); }
+.logo i { font-size: 2rem; color: var(--primary-gold); }
+.logo-text { font-family: var(--font-heading); font-size: 1.4rem; font-weight: 600; line-height: 1.1; }
+.logo-text span { display: block; font-size: 0.8rem; font-family: var(--font-text); font-weight: 400; color: var(--text-muted); text-transform: uppercase; letter-spacing: 2px; }
+
+.nav-menu ul { display: flex; gap: 30px; }
+.nav-menu a { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 500; }
+.nav-menu a:hover { color: var(--primary-gold); }
+
+.nav-toggle, .nav-toggle-label { display: none; }
+
+/* Hero */
+.hero {
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1599643478514-4a58b29c54df?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    display: flex; align-items: center; justify-content: center; text-align: center;
+    position: relative;
+}
+.hero::before {
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(248, 248, 248, 0.85); /* Light overlay */
+}
+.hero-content { position: relative; z-index: 2; max-width: 800px; padding: 0 20px; }
+.hero-tagline { color: var(--primary-gold); font-family: var(--font-text); text-transform: uppercase; letter-spacing: 3px; font-size: 1rem; margin-bottom: 15px; }
+.hero-title { font-size: 4.5rem; color: var(--matte-black); margin-bottom: 25px; line-height: 1.1; }
+.hero-desc { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 40px; }
+.hero-buttons { display: flex; gap: 20px; justify-content: center; }
+
+/* Categories */
+.category-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.category-card { position: relative; overflow: hidden; height: 350px; cursor: pointer; border-radius: 4px; }
+.category-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; }
+.category-card::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.3); transition: var(--transition); }
+.category-card:hover img { transform: scale(1.05); }
+.category-card:hover::after { background: rgba(0,0,0,0.5); }
+.category-content { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2; text-align: center; width: 100%; }
+.category-content h3 { color: var(--white); font-size: 1.8rem; letter-spacing: 1px; }
+
+/* Products */
+.products { background-color: var(--white); }
+.product-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.product-card { background: var(--bg-light); border: 1px solid rgba(0,0,0,0.05); padding: 20px; text-align: center; transition: var(--transition); position: relative; }
+.product-card:hover { transform: translateY(-10px); box-shadow: var(--card-shadow); border-color: rgba(212,175,55,0.3); }
+.product-badge { position: absolute; top: 20px; right: 20px; background: var(--light-gold); color: var(--matte-black); font-size: 0.7rem; padding: 4px 10px; font-weight: 600; z-index: 2; }
+.product-img { width: 100%; height: 250px; overflow: hidden; margin-bottom: 20px; }
+.product-img img { width: 100%; height: 100%; object-fit: cover; }
+.product-info h3 { font-size: 1.2rem; margin-bottom: 10px; }
+.product-price { color: var(--primary-gold); font-weight: 600; font-size: 1.2rem; margin-bottom: 15px; }
+
+/* Why Us */
+.feature-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); text-align: center; }
+.feature-card { padding: 40px 20px; background: var(--white); border-bottom: 3px solid transparent; transition: var(--transition); }
+.feature-card:hover { transform: translateY(-5px); box-shadow: var(--card-shadow); border-bottom-color: var(--primary-gold); }
+.feature-icon { font-size: 2.5rem; color: var(--primary-gold); margin-bottom: 20px; }
+.feature-card h3 { margin-bottom: 15px; font-size: 1.3rem; }
+.feature-card p { color: var(--text-muted); font-size: 0.95rem; }
+
+/* Footer */
+.footer { background: var(--matte-black); color: var(--white); padding: 80px 0 20px; }
+.footer-content { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 50px; }
+.footer-brand h2 { color: var(--primary-gold); font-size: 1.8rem; margin-bottom: 10px; }
+.footer-brand p { color: var(--text-muted); margin-bottom: 20px; }
+.socials { display: flex; gap: 15px; }
+.socials a { color: var(--primary-gold); font-size: 1.2rem; }
+.socials a:hover { color: var(--white); }
+.footer-contact h3 { color: var(--white); margin-bottom: 20px; }
+.footer-contact p { color: var(--text-muted); margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+.footer-contact i { color: var(--primary-gold); }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; text-align: center; color: var(--text-muted); font-size: 0.9rem; }
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .nav-toggle-label { display: block; cursor: pointer; padding: 10px; }
+    .nav-toggle-label span, .nav-toggle-label span::before, .nav-toggle-label span::after { display: block; background: var(--matte-black); height: 2px; width: 25px; position: relative; transition: var(--transition); }
+    .nav-toggle-label span::before, .nav-toggle-label span::after { content: ''; position: absolute; }
+    .nav-toggle-label span::before { bottom: 8px; } .nav-toggle-label span::after { top: 8px; }
+    .nav-menu { position: absolute; top: 100%; left: 0; width: 100%; background: var(--white); display: none; padding: 20px; border-bottom: 1px solid rgba(0,0,0,0.1); }
+    .nav-toggle:checked ~ .nav-menu { display: block; }
+    .nav-menu ul { flex-direction: column; align-items: center; }
+    
+    .hero-title { font-size: 3rem; }
+    .footer-content { grid-template-columns: 1fr; text-align: center; }
+    .footer-contact p { justify-content: center; }
+}

@@ -59,7 +59,7 @@
                 <div class="hero-content reveal">
                     <h4>Hello World</h4>
                     <h1>Kavitha</h1>
-                    <h2>Software Developer</h2>
+                    <h2>Software Developer</h2>na panna website a github l
                     <p class="text-gradient"
                         style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; font-family: var(--font-heading);">
                         "Turning Ideas into Code"
@@ -79,6 +79,9 @@
                             <i data-lucide="mail"></i>
                         </a>
                     </div>
+                    
+                    <!-- React Component Mount Point -->
+                    <div id="react-demo-root" style="margin-top: 2rem;"></div>
 
                     <div class="hero-socials">
                         <span>Connect:</span>
@@ -712,7 +715,15 @@
 
     <!-- Lucide Icons Library for SVG Icon loading -->
     <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- React & ReactDOM (via CDN) -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- Babel for JSX compilation in the browser -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
     <script src="script.js"></script>
+    <script type="text/babel" src="react-app.js"></script>
 </body>
 
 </html>
